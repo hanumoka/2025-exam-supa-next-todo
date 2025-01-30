@@ -73,9 +73,15 @@ const TodoList = ({
         </article>
         <div className=" h-[2px] my-10 bg-black"></div>
         {todoListData?.length >= 1 ? (
-          <ul>
+          <ul className="flex flex-col gap-6">
             {(todoListData ?? []).map((todo) => {
-              return <TodoListItem key={todo?.id} todo={todo}></TodoListItem>;
+              return (
+                <TodoListItem
+                  key={todo?.id}
+                  todo={todo}
+                  onDelete={() => {}}
+                ></TodoListItem>
+              );
             })}
           </ul>
         ) : (
