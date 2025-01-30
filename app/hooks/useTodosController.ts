@@ -8,7 +8,7 @@ import {
 import { Database } from "@/types/supabase";
 import { useState, useEffect } from "react";
 
-type TodoDto = Database["public"]["Tables"]["todos_no_rls"]["Row"];
+export type TodoDto = Database["public"]["Tables"]["todos_no_rls"]["Row"];
 
 const useTodosController = () => {
   const [loading, setLoading] = useState(true);
