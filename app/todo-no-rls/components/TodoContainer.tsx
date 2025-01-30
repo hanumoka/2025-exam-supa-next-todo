@@ -13,6 +13,19 @@ const TodoContainer = () => {
         ownerUserId="123123"
         loading={loading}
         todoListData={todos}
+        isReadOnly={false}
+        onUpdate={(id, content) => {
+          console.log(">> onUpdate id: {}, content: {}", id, content);
+        }}
+        onCreate={() => {
+          console.log(">> onCreate ...");
+        }}
+        onDelete={(id) => {
+          console.log(">> onDelete id: {}", id);
+        }}
+        onSearch={(terms) => {
+          console.log(">> onSearch terms: {}", terms);
+        }}
       />
     </div>
   );
