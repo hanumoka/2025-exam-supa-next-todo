@@ -17,3 +17,9 @@ yarn add cookies-next@4.1.1
 
 - supabase 타입생성 public 영역의 테이블을 기준으로 supabase에 생성한 테이블별 타입(typescript)을 생성해주는것 같다. (1, 2 를 해야 된다.)
   npx supabase gen types typescript --project-id "pvvlboidqrgqymjodkbw" --schema public > types/supabase.ts
+
+## 구글 로그인 구현 3간계
+
+1. Google Cloud API Oauth 셋팅
+2. Nextjs Auth UI 작업
+3. Callback 처리 (PKCE Auth2.1)
