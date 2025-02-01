@@ -29,6 +29,7 @@ const TodoList = ({
   onDelete = (id) => {},
   onSearch = (terms) => {},
 }: TodoListProps) => {
+  const [userSearchInput, setUserSearchInput] = useState("");
   const [copiedText, copy] = useCopyToClipboard();
 
   const handleCopy = () => {
@@ -40,6 +41,11 @@ const TodoList = ({
       .catch((error) => {
         console.log("Copy failed!", error);
       });
+  };
+
+  const handleSearch = () => {
+    onSearch(userSearchInput);
+    setUserSearchInput("");
   };
 
   return (
@@ -64,13 +70,21 @@ const TodoList = ({
           <article className=" flex flex-col sm:flex-row gap-4 mt-8">
             <div className=" flex flex-1 h-[60px]">
               <input
+                value={userSearchInput}
+                onChange={(e) => setUserSearchInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleSearch();
+                  }
+                }}
                 type="text"
                 className="p-4 
-              flex-1 
-              bg-[#F7CB66]
-              border border-black rounded-l-2xl font-bold"
+                  flex-1 
+                bg-[#F7CB66]
+                  border border-black rounded-l-2xl font-bold"
               />
               <div
+                onClick={handleSearch}
                 className="w-[60px] flex justify-center items-center
              bg-black rounded-r-2xl cursor-pointer"
               >
