@@ -1,10 +1,22 @@
+import { pingAction } from "@/actions/ping/ping.action";
 import { sleep } from "@/lib/utils";
 import React from "react";
+import ClientComponentTest from "./components/ClientComponentTest";
 
 const page = async () => {
+  console.log(">> SSR start...");
+
+  const result = await pingAction();
   await sleep(1500);
 
-  return <div>page</div>;
+  console.log(">> SSR End...");
+
+  return (
+    <div>
+      ssr todo page {result}
+      <ClientComponentTest />
+    </div>
+  );
 };
 
 export default page;
