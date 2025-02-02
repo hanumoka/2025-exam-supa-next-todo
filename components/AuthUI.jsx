@@ -23,6 +23,22 @@ const AuthUI = () => {
     window.location.reload();
   };
 
+  // 구글 로그인 버튼 커스텀용
+  const handleGoogleLogin = async () => {
+    await supabase.auth.signIn({
+      provider: "google",
+      options: { redirectTo: process.env.NEXT_PUBLIC_AUTH_REDIRECT_TO },
+    });
+  };
+
+  // 깃허브 로그인 버튼 커스텀용
+  const handleGithubLogin = async () => {
+    await supabase.auth.signIn({
+      provider: "github",
+      options: { redirectTo: process.env.NEXT_PUBLIC_AUTH_REDIRECT_TO },
+    });
+  };
+
   useEffect(() => {
     getUserInfo();
   }, []);
