@@ -4,7 +4,7 @@ import { IoShareSocialOutline } from "react-icons/io5";
 import { useCopyToClipboard } from "usehooks-ts";
 import { IoSearchOutline } from "react-icons/io5";
 import TodoListItem from "./TodoListItem";
-import { TodoDto } from "@/app/hooks/useTodosController";
+import { TodoDto } from "@/app/todo-no-rls/hook/useTodosController";
 
 interface TodoListProps {
   sharedUserFullName?: string;

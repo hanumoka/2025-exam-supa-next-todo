@@ -3,7 +3,7 @@ import React, { use, useEffect, useState } from "react";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { createSupabaseBrowserClient } from "@/lib/client/supabase";
-import useHydrate from "@/app/hooks/useHydrate";
+import useHydrate from "@/hooks/useHydrate";
 
 const AuthUI = () => {
   const [user, setUser] = useState();
